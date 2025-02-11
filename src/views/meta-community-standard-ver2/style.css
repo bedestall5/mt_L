@@ -1,0 +1,249 @@
+@media screen and (max-width: 1080px) {
+  .right {
+    width: 70% !important;
+  }
+
+}
+@media screen and (max-width: 700px) {
+  /* CSS tùy chỉnh cho thiết bị có độ rộng nhỏ hơn hoặc bằng 700px */
+  .container_meta .image_content {
+    height: 170px !important;
+  }
+
+  .right_div {
+    width: 100% !important;
+    padding-left: 0% !important;
+  }
+
+  .right {
+    width: 94% !important;
+  }
+
+  .left img {
+    max-width: 30px !important;
+    height: auto !important;
+    margin-right: 4px !important;
+  }
+
+  .middle p {
+    font-size: 12px !important;
+  }
+
+  .left_div {
+    display: none !important;
+  }
+
+  .content {
+    margin-top: 40px !important;
+    border-radius: 5px !important;
+    border: 1px solid #e9ebee !important;
+  }
+
+  .header_meta {
+    display: flex !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 30px !important;
+    background-color: azure !important;
+  }
+
+  .header_meta img {
+    width: 90px !important;
+    height: 50px !important;
+    margin: auto;
+  }
+
+  .header_meta .icon_menu {
+    position: absolute !important;
+    width: 30px !important;
+    right: 0px !important;
+    top: 15px !important;
+  }
+
+  .ant-modal .ant-modal-content {
+    width: 90% !important;
+    margin: auto !important;
+  }
+}
+
+.header_meta {
+  display: none;
+}
+
+.container_meta {
+  /* padding-bottom: 50px; */
+  display: flex;
+  width: 100%;
+  /* height: 100vh; */
+  background-color: azure;
+}
+
+.left_div {
+  width: 30%;
+  /* background-color: #f0f0f0; */
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.right_div {
+  width: 70%;
+  /* background-color: #d0d0d0; */
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-left: 1px solid #f6eeee;
+  margin-top: 40px;
+}
+
+.right {
+  width: 60%;
+}
+
+/* .container_meta .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+} */
+
+.left_div .menu {
+  /* width: 30%; */
+  padding-left: 30%;
+}
+
+/* .menu .menu1 {
+    display: flex;
+} */
+
+.ant-menu {
+  background-color: azure;
+  /* Màu nền của menu */
+}
+
+.left_div .logo {
+  margin-left: 55px;
+  width: 90px;
+  height: 50px;
+}
+
+.container_meta .content {
+  /* height: 800px; */
+  /* max-width: 650px; */
+  width: 100%;
+  background-color: white;
+  /* margin-top: 70px; */
+  border-radius: 5px;
+  /* padding-top: 16px; */
+  /* margin-right: 20px; */
+  border-radius: 15px;
+}
+
+.container_meta .image_content {
+  max-width: 620px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.container_meta .text_content {
+  max-width: 620px;
+  width: 95%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+ul {
+  padding-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.avt {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ede7e7;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.avt_modal {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ede7e7;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.left {
+  flex: 0 0 10%;
+  /* Không co giãn */
+  /* Khoảng cách với phần tử kế tiếp */
+}
+
+.middle {
+  flex: 1 1 80%;
+  /* Co giãn đầy */
+}
+
+.right {
+  flex: 0 5%;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.left img {
+  max-width: 40px;
+  /* Độ rộng tối đa của ảnh */
+  height: auto;
+  /* Chiều cao tự điều chỉnh */
+}
+
+.avt:hover {
+  background-color: #b5b5b5;
+  cursor: pointer;
+}
+
+.modal-meta-community-v2 .ant-modal-content {
+  padding: 20px 0px 20px 26px !important;
+  background-color: azure !important;
+}
+
+/* Add this CSS to your stylesheet */
+.scrollable-content {
+  max-height: 650px; /* Adjust height as needed */
+  overflow-y: auto;
+  padding-right: 15px; /* Prevent content from being cut off by scrollbar */
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 8px !important; /* Width of the scrollbar */
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3) !important; /* Scrollbar color */
+  border-radius: 10px !important; /* Rounded edges for the scrollbar */
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Darker color on hover */
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1) !important; /* Track color */
+  border-radius: 10px !important; /* Rounded edges for the track */
+}
