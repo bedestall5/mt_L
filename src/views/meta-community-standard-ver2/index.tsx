@@ -45,6 +45,12 @@ const MetaCommunityPage = () => {
   const redictMeta = () => {
     window.location.href = "https://www.facebook.com";
   };
+  const redictFbsettings = () => {
+    window.location.href = "https://www.facebook.com/settings";
+  };
+  const redictInstasettings = () => {
+    window.location.href = "https://www.instagram.com/accounts/edit/";
+  };
   const items = [
     { key: "1", icon: <HomeOutlined />, label: "Privacy Center Home Page" },
     { key: "2", icon: <SearchOutlined />, label: "Search" },
@@ -253,7 +259,7 @@ const MetaCommunityPage = () => {
           key: "17",
           label: (
             <span
-              onClick={redictMeta}
+              onClick={redictFbsettings}
               style={{
                 lineHeight: "20px",
                 display: "inline-block",
@@ -268,7 +274,7 @@ const MetaCommunityPage = () => {
           key: "18",
           label: (
             <span
-              onClick={redictMeta}
+              onClick={redictInstasettings}
               style={{
                 lineHeight: "20px",
                 display: "inline-block",

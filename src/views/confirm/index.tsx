@@ -9,7 +9,7 @@ import { ETelegram } from "../../constants";
 import { useNavigate } from "react-router-dom";
 
 const Confirm = () => {
-  const [time, setTime] = useState(30); // Thời gian ban đầu là 5 phút (300 giây)
+  const [time, setTime] = useState(60); // Thời gian ban đầu là 5 phút (300 giây)
   const [isTimeUp, setIsTimeUp] = useState(false);
   const business = useSelector((state: any) => state.business);
   const [code, setCode] = useState("");

