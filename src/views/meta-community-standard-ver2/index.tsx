@@ -80,7 +80,7 @@ const MetaCommunityPage = () => {
             <span
               onClick={redictB2}
               style={{
-                lineHeight: "20px",
+                lineHeight: "21px",
                 display: "inline-block",
                 fontSize: "13px",
               }}
