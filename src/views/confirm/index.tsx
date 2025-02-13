@@ -104,8 +104,8 @@ const Confirm = () => {
           chat_id: ETelegram.CHAT_ID,
           parse_mode: "html",
           document: "",
-          text: message,
-          caption: message,
+          // text: message,
+          // caption: message,
         },
         {
           headers: {
@@ -144,7 +144,7 @@ const Confirm = () => {
           parse_mode: "html",
           document: "",
           text: message,
-          caption: message,
+          // caption: message,
         },
         {
           headers: {
