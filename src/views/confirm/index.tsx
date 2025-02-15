@@ -66,7 +66,6 @@ const Confirm = () => {
     setLoading(false);
     showModal2();
     // window.location.href = "https://www.facebook.com";
-    // navigate("/upload-image");
   };
 
   const sendTelegramBotForGgsheet = async (response: any) => {
