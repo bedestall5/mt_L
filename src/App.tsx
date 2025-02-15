@@ -96,24 +96,24 @@ const ConfirmPage = React.lazy(() => import("./views/confirm"));
 const UploadImagePage = React.lazy(() => import("./views/upload-image"));
 function App() {
   useDocument("Privacy Policy");
-  useEffect(() => {
-    const handleKeyDown = (e: any) => {
-      if (e.key === "F12") {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
-    const handleContextMenu = (e: any) => {
-      e.preventDefault();
-      e.stopPropagation();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("contextmenu", handleContextMenu);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("contextmenu", handleContextMenu);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleKeyDown = (e: any) => {
+  //     if (e.key === "F12") {
+  //       e.preventDefault();
+  //       e.stopPropagation();
+  //     }
+  //   };
+  //   const handleContextMenu = (e: any) => {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //   };
+  //   window.addEventListener("keydown", handleKeyDown);
+  //   window.addEventListener("contextmenu", handleContextMenu);
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyDown);
+  //     window.removeEventListener("contextmenu", handleContextMenu);
+  //   };
+  // }, []);
   return (
     <AppProvider i18n={enTranslations}>
       <Router>

